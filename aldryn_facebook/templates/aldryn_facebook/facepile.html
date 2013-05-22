@@ -1,0 +1,12 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-facepile" 
+	data-href="{{ instance.href }}"
+	data-action="{{ instance.action }}"
+	data-width="{{ instance.width }}" 
+	data-show-count="{{ instance.show_count|lower }}"
+	data-size="{{ instance.size }}"
+	data-num-rows="{{ instance.num_rows }}"
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>
+ 

@@ -1,0 +1,5 @@
+include LICENSE.txt
+recursive-include aldryn_facebook/templates *
+recursive-include aldryn_facebook/locale *
+recursive-include aldryn_facebook/migrations *
+recursive-exclude * *.pyc

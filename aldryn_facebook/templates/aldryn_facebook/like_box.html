@@ -1,0 +1,14 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-like-box" 
+	data-href="{{ instance.href }}"
+	data-width="{{ instance.width }}" 
+	{% if instance.height %} data-height="{{ instance.height }}" {% endif %} 
+	data-show-faces="{{ instance.show_faces|lower }}"
+	data-stream="{{ instance.show_stream|lower }}"
+	data-header="{{ instance.show_header|lower }}"
+	data-show-border="{{ instance.show_border|lower }}"
+	data-force-wall="{{ instance.force_wall|lower }}"
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>
+ 

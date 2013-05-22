@@ -1,0 +1,11 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-recommendations" 
+	{% if instance.site %} data-site="{{ instance.site }}" {% endif %}
+	data-header="{{ instance.show_header|lower }}" 
+	data-width="{{ instance.width }}" 
+	{% if instance.height %} data-height="{{ instance.height }}" {% endif %} 
+	{% if instance.ref %} data-ref="{{ instance.ref }}" {% endif %}
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>
+ 

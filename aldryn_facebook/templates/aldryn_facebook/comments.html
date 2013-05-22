@@ -1,0 +1,9 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-comments" 
+	{% if instance.href %} data-href="{{ instance.href }}" {% endif %}
+	data-width="{{ instance.width }}" 
+	data-num-posts="{{ instance.num_posts }}"
+	data-order-by="{{ instance.order_by }}"
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>

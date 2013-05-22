@@ -1,0 +1,9 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-follow" 
+	data-href="{{ instance.href }}"
+	data-show-faces="{{ instance.show_faces|lower }}" 
+	data-width="{{ instance.width }}" 
+	data-layout="{{ instance.layout_style }}" 
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>

@@ -1,0 +1,12 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-like" 
+	{% if instance.href %} data-href="{{ instance.href }}" {% endif %}
+	{% if instance.send %} data-send="true" {% endif %} 
+	data-show-faces="{{ instance.show_faces|lower }}" 
+	data-width="{{ instance.width }}" 
+	data-layout="{{ instance.layout_style }}" 
+	data-action="{{ instance.verb }}" 
+	{% if instance.ref %} data-ref="{{ instance.ref }}" {% endif %}
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>

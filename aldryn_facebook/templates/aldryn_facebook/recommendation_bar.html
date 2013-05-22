@@ -1,0 +1,13 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-recommendations-bar" 
+	{% if instance.href %} data-href="{{ instance.href }}" {% endif %}
+	data-side="{{ instance.side }}"
+	data-trigger="{{ instance.trigger }}"
+	data-read-time="{{ instance.read_time }}"
+	data-action="{{ instance.verb }}"
+	{% if instance.site %} data-site="{{ instance.site }}"{% endif %}
+	{% if instance.ref %} data-ref="{{ instance.ref }}" {% endif %}
+	data-num-recommendations="{{ instance.num_recommendations }}"
+	></div>
+ 

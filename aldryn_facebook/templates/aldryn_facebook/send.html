@@ -1,0 +1,7 @@
+{% include "aldryn_facebook/snippets/_jssdk.html" %}
+
+<div class="fb-send" 
+	{% if instance.href %} data-href="{{ instance.href }}" {% endif %}
+	{% if instance.ref %} data-ref="{{ instance.ref }}" {% endif %}
+	{% include "aldryn_facebook/snippets/_common_attrs.html" %}
+	></div>
