@@ -1,0 +1,17 @@
+{
+	"name": "Aldryn Facebook",
+	"description": "Collection of Facebook social plugins.",
+	"url": "https://github.com/aldryn/aldryn-facebook",
+	"package-name": "aldryn-facebook",
+	"installed-apps": [
+		"aldryn_facebook"
+	],
+	"author": {
+		"name": "Divio AG",
+		"url": "https://www.divio.ch"
+	},
+	"license": {
+		"name": "BSD",
+		"text": "!literal-include LICENSE.txt"
+	}
+}
