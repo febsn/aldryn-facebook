@@ -101,3 +101,12 @@ class FacebookFacepilePlugin(FacebookPluginBase):
     model = models.FacebookFacepilePlugin
 
 plugin_pool.register_plugin(FacebookFacepilePlugin)
+
+
+class FacebookPagePlugin(FacebookPluginBase):
+
+    render_template = 'aldryn_facebook/page.html'
+    name = _('Facebook Page')
+    model = models.FacebookPagePlugin
+
+plugin_pool.register_plugin(FacebookPagePlugin)

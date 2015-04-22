@@ -138,3 +138,33 @@ class FacebookFacepilePlugin(CMSPlugin):
     size = models.CharField(_('Size'), max_length=6, choices=SIZES, default=SIZES[1][0],
                             help_text=_('Determines the size of the images and social context in the facepile.'))
     show_count = models.BooleanField(_('Show Count'), default=True)
+
+
+class FacebookPagePlugin(CMSPlugin):
+    href = models.URLField(_('Facebook Page URL'))
+    width = models.PositiveIntegerField(
+        _('Width'),
+        default=340,
+        help_text=_('The pixel width of the plugin. Min. is 280 & Max. is 500')
+    )
+    height = models.PositiveIntegerField(
+        _('Height'),
+        blank=True,
+        null=True,
+        help_text=_('The maximum pixel height of the plugin. Min. is 130')
+    )
+    hide_cover = models.BooleanField(
+        _('Hide Cover'),
+        default=False,
+        help_text=_('Hide cover photo in the header')
+    )
+    show_facepile = models.BooleanField(
+        _('Show Facepile'),
+        default=True,
+        help_text=_('Show profile photos when friends like this')
+    )
+    show_posts = models.BooleanField(
+        _('Show Posts'),
+        default=False,
+        help_text=_('Show posts from the Page\'s timeline')
+    )
