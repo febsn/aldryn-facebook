@@ -6,13 +6,14 @@ from django.utils.translation import ugettext_lazy as _
 
 class RefField(models.CharField):
 
-    def __init__(self):
-        super(RefField, self).__init__(
-            _('Ref Label'),
-            blank=True,
-            max_length=50,
-            help_text=_('A label for tracking referrals.'),
-            validators=[RegexValidator(regex=r'^[a-z+/=.:_-]*$')])
+    def __init__(self, *args, **kwargs):
+        kwargs['verbose_name'] = _('Ref Label')
+        kwargs['blank'] = True
+        kwargs['max_length'] = 50
+        kwargs['help_text'] = _('A label for tracking referrals.')
+        kwargs['validators'] = [RegexValidator(regex=r'^[a-z+/=.:_-]*$')]
+        super(RefField, self).__init__(*args, **kwargs)
+            
 
     def south_field_triple(self):
         from south.modelsinspector import introspector
@@ -29,12 +30,12 @@ class LayoutStyleField(models.CharField):
         ('box_count', _('Box Count')),
     ]
 
-    def __init__(self):
-        super(LayoutStyleField, self).__init__(
-            _('Layout Style'),
-            max_length=20,
-            choices=self.LAYOUTS,
-            default=self.LAYOUTS[0][0])
+    def __init__(self, *args, **kwargs):
+        kwargs['verbose_name'] = _('Layout Style')
+        kwargs['max_length'] = 20
+        kwargs['choices'] = self.LAYOUTS
+        kwargs['default'] = self.LAYOUTS[0][0]
+        super(LayoutStyleField, self).__init__(*args, **kwargs)
 
     def south_field_triple(self):
         from south.modelsinspector import introspector
@@ -50,12 +51,12 @@ class VerbField(models.CharField):
         ('recommend', _('Recommend')),
     ]
 
-    def __init__(self):
-        super(VerbField, self).__init__(
-            _('Verb to display'),
-            max_length=10,
-            choices=self.VERBS,
-            default=self.VERBS[0][0])
+    def __init__(self, *args, **kwargs):
+        kwargs['verbose_name'] = _('Verb to display')
+        kwargs['max_length'] = 10
+        kwargs['choices'] = self.VERBS
+        kwargs['default'] = self.VERBS[0][0]
+        super(VerbField, self).__init__(*args, **kwargs)
 
     def south_field_triple(self):
         from south.modelsinspector import introspector
