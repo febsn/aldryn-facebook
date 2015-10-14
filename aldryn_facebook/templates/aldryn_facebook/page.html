@@ -2,13 +2,14 @@
 
 <div class="fb-page"
     data-href="{{ instance.href }}"
-	data-width="{{ instance.width }}" 
+	{% if instance.width %}data-width="{{ instance.width }}" {% endif %}
 	{% if instance.height %} data-height="{{ instance.height }}" {% endif %} 
 	data-hide-cover="{{ instance.hide_cover|lower }}"
 	data-show-facepile="{{ instance.show_facepile|lower }}"
 	data-show-posts="{{ instance.show_posts|lower }}"
-	data-show-border="{{ instance.show_border|lower }}"
+	data-small-header="{{ instance.use_small_header|lower }}"
+	data-adapt-container-width="{{ instance.adapt_width }}"
 	{% include "aldryn_facebook/snippets/_common_attrs.html" %}>
-	<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FIANoesterreich"><a href="https://www.facebook.com/FIANoesterreich">FIAN Österreich</a></blockquote></div>
+	<div class="fb-xfbml-parse-ignore"><blockquote cite="{{ instance.href }}"><a href="{{ instance.href }}">{{ instance.href }}</a></blockquote></div>
 </div>
 

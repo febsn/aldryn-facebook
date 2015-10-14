@@ -144,7 +144,8 @@ class FacebookPagePlugin(CMSPlugin):
     href = models.URLField(_('Facebook Page URL'))
     width = models.PositiveIntegerField(
         _('Width'),
-        default=340,
+        blank=True,
+        null=True,
         help_text=_('The pixel width of the plugin. Min. is 280 & Max. is 500')
     )
     height = models.PositiveIntegerField(
@@ -153,18 +154,28 @@ class FacebookPagePlugin(CMSPlugin):
         null=True,
         help_text=_('The maximum pixel height of the plugin. Min. is 130')
     )
+    adapt_width = models.BooleanField(
+        _('Adapt to plugin container width'),
+        default=True,
+        help_text=_('Plugin will try to fit inside the container')
+    )
     hide_cover = models.BooleanField(
         _('Hide Cover'),
         default=False,
-        help_text=_('Hide cover photo in the header')
+        help_text=_('Hide the cover photo in the header')
+    )
+    use_small_header = models.BooleanField(
+        _('Use small header'),
+        default=False,
+        help_text=_('Use a smaller version of the page header')
     )
     show_facepile = models.BooleanField(
-        _('Show Facepile'),
+        _('Show friends\' faces'),
         default=True,
         help_text=_('Show profile photos when friends like this')
     )
     show_posts = models.BooleanField(
-        _('Show Posts'),
+        _('Show Page posts'),
         default=False,
         help_text=_('Show posts from the Page\'s timeline')
     )
