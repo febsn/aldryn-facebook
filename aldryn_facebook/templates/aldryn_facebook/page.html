@@ -8,7 +8,7 @@
 	data-show-facepile="{{ instance.show_facepile|lower }}"
 	data-show-posts="{{ instance.show_posts|lower }}"
 	data-small-header="{{ instance.use_small_header|lower }}"
-	data-adapt-container-width="{{ instance.adapt_width }}"
+	data-adapt-container-width="{{ instance.adapt_width|lower }}"
 	{% include "aldryn_facebook/snippets/_common_attrs.html" %}>
 	<div class="fb-xfbml-parse-ignore"><blockquote cite="{{ instance.href }}"><a href="{{ instance.href }}">{{ instance.href }}</a></blockquote></div>
 </div>
